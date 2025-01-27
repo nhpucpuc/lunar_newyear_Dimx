@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('background2.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Dancing Script', cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+            color: #990000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            margin-top: 200px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .btn {
+            width: 520px; 
+            height: 360px; 
+            background: url('lixi.png') no-repeat center center;
+            background-size: cover;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            transform: translateY(190px);
+        }
+
+        .number {
+            font-family: 'Brush Script MT', cursive;
+            margin-top: 30px; 
+            font-size: 18px;
+            font-weight: bold;
+            color: #FF3300; 
+            text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.7);
+        }
+
+        .container h1 {
+            max-width: 600px;
+            margin: 0 auto;
+            word-wrap: break-word;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .highlight {
+            display: block;
+            margin-top: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="typing-text"></h1>
+        <span class="highlight" id="highlight-text"></span>
+        <div class="number" id="random-number"></div>
+    </div>
+    <div class="button-container" id="button-container">
+        <button class="btn" onclick="generateRandomNumber()"></button>
+    </div>
+
+    <script>
+        const text = "Năm mới Phúc chúc Dĩm phải lun zui zẻ hăm có được bùn linh ta linh tinh, ngày càng xink đẹp, bớt ovtk lại bỏ qua chịn cũ i và phải lun cười nhóoo😊";
+        const highlightText = "Bấm vô bao lì xì iiiiii";
+
+        const typingElement = document.getElementById('typing-text');
+        const highlightElement = document.getElementById('highlight-text');
+        const buttonContainer = document.getElementById('button-container');
+
+        let index = 0;
+        let highlightIndex = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50); 
+            } else if (highlightIndex < highlightText.length) {
+                highlightElement.innerHTML += highlightText.charAt(highlightIndex);
+                highlightIndex++;
+                setTimeout(typeText, 50); 
+            } else {
+                buttonContainer.style.opacity = 1; 
+            }
+        }
+
+        typeText();
+
+        let numberGenerated = false;
+        let lastNumber = null;
+
+        function generateRandomNumber() {
+            const numberElement = document.getElementById('random-number');
+
+            if (numberGenerated) {
+                numberElement.innerText = `Ê ê ê đừng có tham như z, hãy chấp nhận con số ${lastNumber}K đi 😌`;
+                return;
+            }
+
+            lastNumber = Math.floor(Math.random() * 100) + 1;
+            numberElement.innerText = `Wao hên z chài được ${lastNumber}K nè. Bấm lần nữa để ra số to hơn thì sao? 🤑`;
+            numberGenerated = true;
+        }
+    </script>
+</body>
+</html>
