@@ -15,14 +15,14 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            height: 100vh;
+            height: 130vh;
             text-align: center;
             color: #990000;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 
         .button-container {
-            margin-top: 15vh; /* Đặt bằng phần trăm chiều cao màn hình */
+            margin-top: 5vh; /* Đặt bằng phần trăm chiều cao màn hình */
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
         }
@@ -39,7 +39,7 @@
         }
 
         .container {
-            transform: translateY(10vh); /* Tỉ lệ dựa trên chiều cao màn hình */
+            transform: translateY(20vh); /* Tỉ lệ dựa trên chiều cao màn hình */
         }
 
         .number {
@@ -49,13 +49,17 @@
             font-weight: bold;
             color: #FF3300;
             text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+            max-width: 80%; /* Điều chỉnh độ rộng dòng chữ */
+            margin-left: auto;
+            margin-right: auto;
+            word-wrap: break-word;
         }
 
         .container h1 {
-            max-width: 80%; /* Tỉ lệ theo chiều rộng màn hình */
+            max-width: 50%; /* Tỉ lệ theo chiều rộng màn hình */
             margin: 0 auto;
             word-wrap: break-word;
-            font-size: 2.5rem; /* Sử dụng rem để font chữ tỉ lệ */
+            font-size: 1.75rem; /* Sử dụng rem để font chữ tỉ lệ */
             line-height: 1.4;
             font-family: 'Times New Roman', serif;
         }
@@ -110,7 +114,7 @@
     </div>
 
     <script>
-        const text = "Năm mới Phúc chúc Dĩm phải lun zui zẻ hăm có được bùn linh ta linh tinh, ngày càng xink đẹp, bớt ovtk lại bỏ qua chịn cũ i và phải lun cười nhóoo😊";
+        const text = "Năm mới Phúc chúc DĨm phải lun zui zẻ hăm có được bùn linh ta linh tinh, ngày càng xink đẹp, bớt ovtk lại bỏ qua chịn cũ i và phải lun cười nhóoo😊";
         const highlightText = "Bấm vô bao lì xì iiiiii";
 
         const typingElement = document.getElementById('typing-text');
